@@ -11,6 +11,7 @@
 [ext_resource path="res://images/button_img_2_u.png" type="Texture" id=9]
 [ext_resource path="res://images/button_img_3_u.png" type="Texture" id=10]
 [ext_resource path="res://addons/aud_vis/visualizer.gd" type="Script" id=11]
+[ext_resource path="res://PlayButton.gd" type="Script" id=11]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -24,9 +25,30 @@ extents = Vector2( 31, 10 )
 
 [node name="SpriteManager" type="Node2D" parent="."]
 
+[node name="PlayButton" type="Area2D" parent="SpriteManager"]
+position = Vector2( 501, 350 )
+z_index = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/PlayButton"]
+position = Vector2( 15, 14 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SpriteManager/PlayButton"]
+position = Vector2( 15, 19 )
+scale = Vector2( 0.508474, 0.457143 )
+texture = ExtResource( 7 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SpriteManager/PlayButton"]
+
 [node name="Reverb" type="Area2D" parent="SpriteManager"]
 position = Vector2( 292, 362 )
-script = ExtResource( 2 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -130,6 +152,7 @@ script = ExtResource( 11 )
 
 [node name="SoundManager" type="Node2D" parent="."]
 
+[connection signal="input_event" from="SpriteManager/PlayButton" to="SpriteManager/PlayButton" method="_on_PlayButton_input_event"]
 [connection signal="input_event" from="SpriteManager/Reverb" to="SpriteManager/Reverb" method="_on_Reverb_input_event"]
 [connection signal="input_event" from="SpriteManager/Panning" to="SpriteManager/Panning" method="_on_Panning_input_event"]
 [connection signal="input_event" from="SpriteManager/LPF" to="SpriteManager/LPF" method="_on_LPF_input_event"]
