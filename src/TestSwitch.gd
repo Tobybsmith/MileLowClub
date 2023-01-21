@@ -1,5 +1,8 @@
 extends Area2D
 
+var down_sprite = load("res://images/button_img_1_p.png")
+var up_sprite = load("res://images/button_img_1_u.png")
+
 var IsPressed = false
 
 # Called when the node enters the scene tree for the first time.
@@ -11,7 +14,9 @@ func _on_Reverb_input_event(viewport, event, shape_idx):
 		IsPressed = not IsPressed
 		if IsPressed:
 			#Update sprite here
+			get_node("Sprite").texture = down_sprite
 			print("Reverb Enabled")
 		else:
 			#Update sprite here
+			get_node("Sprite").texture = up_sprite
 			print("Reverb Disabled")
