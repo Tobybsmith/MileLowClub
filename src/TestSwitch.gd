@@ -4,23 +4,12 @@ var IsPressed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_TestSwitch_input_event(viewport, event, shape_idx):
+		pass # Replace with function body
+ 
+func _on_Reverb_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		if IsPressed:
-			#Un-Press the button1
-			print("Un-Pressed")
-		else:
-			print("Pressed")
-		
 		IsPressed = not IsPressed
+<<<<<<< HEAD
 		
 		# Create a variable to store the audio stream player
 var audio_scratch = AudioStreamPlayer.new()
@@ -47,3 +36,11 @@ func _on_steering_wheel_pressed():
 	# Scratch the current track
 	current_track.seek(current_track.get_playback_position() + 0.1)
 
+=======
+		if IsPressed:
+			#Update sprite here
+			print("Reverb Enabled")
+		else:
+			#Update sprite here
+			print("Reverb Disabled")
+>>>>>>> 5bae4ef4106f1c81d4d8954e6a336bdbedb0c2f4
