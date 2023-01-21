@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Y2Mate.is - Shakira - Hips Don't Lie (Lyrics) ft. Wyclef Jean-fNRXD393cfs-160k-1658006535944.mp3-d5a9991509bd149531e529df8bf5e99a.mp3str"
+
+[deps]
+
+source_file="res://sound files/Y2Mate.is - Shakira - Hips Don't Lie (Lyrics) ft. Wyclef Jean-fNRXD393cfs-160k-1658006535944.mp3"
+dest_files=[ "res://.import/Y2Mate.is - Shakira - Hips Don't Lie (Lyrics) ft. Wyclef Jean-fNRXD393cfs-160k-1658006535944.mp3-d5a9991509bd149531e529df8bf5e99a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
