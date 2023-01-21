@@ -1,7 +1,7 @@
 extends Area2D
 
-var down_sprite = load("res://images/button_img_1_p.png")
-var up_sprite = load("res://images/button_img_1_u.png")
+var down_sprite = load("res://images/button_img_7_p.png")
+var up_sprite = load("res://images/button_img_7_u.png")
 var IsPressed = false
 var music:AudioStreamPlayer
 
