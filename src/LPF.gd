@@ -14,7 +14,7 @@ func _on_LPF_input_event(viewport, event, shape_idx):
 		IsPressed = not IsPressed
 		if IsPressed:
 			#Update sprite here
-			get_node("Sprite").texture = down_sprite
+			get_node("Low Pass Filter On!").texture = down_sprite
 		else:
 			#Update sprite here
-			get_node("Sprite").texture = up_sprite
+			get_node("Low Pass Filter Off!").texture = up_sprite
