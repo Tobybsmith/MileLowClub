@@ -58,22 +58,25 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="SpriteManager/LPF"]
 texture = ExtResource( 1 )
 
-[node name="VolumeKnob" type="Area2D" parent="SpriteManager"]
+[node name="AmplitudeKnob" type="Area2D" parent="SpriteManager"]
 position = Vector2( 427, 217 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="SpriteManager/VolumeKnob"]
+[node name="Sprite" type="Sprite" parent="SpriteManager/AmplitudeKnob"]
 texture = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/VolumeKnob"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/AmplitudeKnob"]
 shape = SubResource( 2 )
 
 [node name="Slider" type="Area2D" parent="SpriteManager"]
 position = Vector2( 528, 153 )
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Rail" type="Sprite" parent="SpriteManager/Slider"]
 position = Vector2( 21.5, -5 )
@@ -97,5 +100,5 @@ texture = ExtResource( 1 )
 [connection signal="input_event" from="SpriteManager/Reverb" to="SpriteManager/Reverb" method="_on_Reverb_input_event"]
 [connection signal="input_event" from="SpriteManager/Panning" to="SpriteManager/Panning" method="_on_Panning_input_event"]
 [connection signal="input_event" from="SpriteManager/LPF" to="SpriteManager/LPF" method="_on_LPF_input_event"]
-[connection signal="input_event" from="SpriteManager/VolumeKnob" to="SpriteManager/VolumeKnob" method="_on_VolumeKnob_input_event"]
+[connection signal="input_event" from="SpriteManager/AmplitudeKnob" to="SpriteManager/AmplitudeKnob" method="_on_AmplitudeKnob_input_event"]
 [connection signal="input_event" from="SpriteManager/Slider" to="SpriteManager/Slider" method="_on_Slider_input_event"]

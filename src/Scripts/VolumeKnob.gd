@@ -14,7 +14,7 @@ func _ready():
 	get_node("Sprite").rotation_degrees = min_rot
 	set_process(false)
 
-func _on_VolumeKnob_input_event(viewport, event, shape_idx):
+func _on_AmplitudeKnob_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
 		start_pos = get_global_mouse_position()
 		start_rot = get_node("Sprite").rotation_degrees

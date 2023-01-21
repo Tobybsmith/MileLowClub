@@ -18,11 +18,11 @@ func _ready():
 func _on_Slider_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
 		start_pos = get_node("SliderKnob").global_position
-		print("START POS: " + str(start_pos))
 		set_process(true)
 
 func _process(delta):
-	pos = (get_global_mouse_position().y - start_pos.y)
+	#problematic area
+	pos = (get_global_mouse_position().y - start_pos.y) + max_pos
 	
 	if pos < min_pos:
 		pos = min_pos
@@ -34,5 +34,4 @@ func _process(delta):
 	get_node("SliderKnob").global_position.y = pos + max_pos
 	
 	if Input.is_action_just_released("click"):
-		print("END POS: " + str(get_node("SliderKnob").global_position))
 		set_process(false)
