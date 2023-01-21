@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://PlayButton.gd" type="Script" id=2]
@@ -11,15 +11,12 @@
 [ext_resource path="res://images/button_img_2_u.png" type="Texture" id=9]
 [ext_resource path="res://images/button_img_3_u.png" type="Texture" id=10]
 [ext_resource path="res://Reverb.gd" type="Script" id=11]
-[ext_resource path="res://MusicFinder.gd" type="Script" id=12]
 [ext_resource path="res://Distortion.gd" type="Script" id=12]
 [ext_resource path="res://images/button_img_4_u.png" type="Texture" id=13]
+[ext_resource path="res://MusicFinder.gd" type="Script" id=14]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.3961
-
-[sub_resource type="CircleShape2D" id=4]
-radius = 13.0
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 42.0
@@ -88,7 +85,6 @@ texture = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/Distortion"]
 position = Vector2( 15, 21 )
-shape = SubResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -181,7 +177,7 @@ __meta__ = {
 [node name="UIManager" type="Node2D" parent="."]
 
 [node name="MusicFinder" type="Node2D" parent="UIManager"]
-script = ExtResource( 12 )
+script = ExtResource( 14 )
 
 [node name="Refresh" type="Button" parent="UIManager/MusicFinder"]
 margin_left = 356.0
@@ -203,6 +199,12 @@ margin_top = 413.0
 margin_right = 403.0
 margin_bottom = 428.0
 text = "Enter Music Location:"
+
+[node name="MusicLabel" type="Label" parent="UIManager/MusicFinder"]
+margin_left = 704.0
+margin_top = 435.0
+margin_right = 961.0
+margin_bottom = 540.0
 
 [connection signal="input_event" from="SpriteManager/PlayButton" to="SpriteManager/PlayButton" method="_on_PlayButton_input_event"]
 [connection signal="input_event" from="SpriteManager/Reverb" to="SpriteManager/Reverb" method="_on_Reverb_input_event"]
