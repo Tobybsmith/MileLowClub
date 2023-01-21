@@ -13,9 +13,9 @@ func _ready():
 
 
 func _on_TestSwitch_input_event(viewport, event, shape_idx):
-	if event.type == InputEvent.MOUSE_BUTTON and event.pressed:
+	if event is InputEventMouseButton and event.pressed:
 		if IsPressed:
-			#Un-Press the button
+			#Un-Press the button1
 			print("Un-Pressed")
 		else:
 			print("Pressed")
