@@ -8,7 +8,7 @@ var norm_rot
 
 var min_rot = -120
 var max_rot = 120
-export var sensitivity : float = 0.75
+export var sensitivity : float = 0.45
 
 func _ready():
 	get_node("Sprite").rotation_degrees = min_rot
@@ -30,8 +30,6 @@ func _process(delta):
 		rot = max_rot
 	
 	norm_rot = (rot + 120)/ 240
-	
-	get_node("DEBUG").text = str(norm_rot)
 	
 	get_node("Sprite").rotation_degrees = rot
 	
