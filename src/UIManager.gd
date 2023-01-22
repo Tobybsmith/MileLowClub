@@ -18,3 +18,7 @@ func music_dir_loaded(music_queue):
 	get_node("MusicFinder/PathLabel").text = "Queue:"
 	for song in music_queue:
 		get_node("MusicFinder/QueueContentsLabel").text += song + "\n"
+
+
+func _on_VolumeSlider_value_changed(value):
+	get_parent().get_node("SpriteManager/PlayButton/AudioStreamPlayer").set_volume_db(value)
