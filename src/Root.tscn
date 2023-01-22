@@ -776,4 +776,4 @@ max_value = 24.0
 [connection signal="amplitude" from="SpriteManager/DelayKnob" to="SpriteManager/Delay" method="_on_DelayKnob_amplitude"]
 [connection signal="input_event" from="SpriteManager/DelayKnob" to="SpriteManager/DelayKnob" method="_on_DelayKnob_input_event"]
 [connection signal="input_event" from="SpriteManager/Slider" to="SpriteManager/Slider" method="_on_Slider_input_event"]
-[connection signal="value_changed" from="UIManager/VolumeSlider" to="UIManager" method="_on_VolumeSlider_value_changed"]
+[connection signal="value_changed" from="UIManager/VolumeSlider" to="SpriteManager/PlayButton" method="_on_VolumeSlider_value_changed"]

@@ -48,11 +48,5 @@ func _on_PowerOff_input_event(viewport, event, shape_idx):
 		else:
 			music.play()
 
-	
-
-
-			
-
-
-	
-
+func _on_VolumeSlider_value_changed(value):
+	get_node("AudioStreamPlayer").volume_db = value
