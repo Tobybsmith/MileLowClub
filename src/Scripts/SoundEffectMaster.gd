@@ -29,6 +29,7 @@ class SoundEffectMaster:
 		print(AudioServer.get_bus_effect_count(bus))
 		
 	func apply_delay():
+		# delay.set_feedback_active(true)
 		AudioServer.add_bus_effect(bus, delay, effect_pos)
 	
 	func remove_delay():
@@ -44,7 +45,7 @@ class SoundEffectMaster:
 		print(AudioServer.get_bus_effect_count(bus))
 		
 	func apply_distortion():
-		distortion.set_mode(4)
+		distortion.set_mode(1)
 		AudioServer.add_bus_effect(bus, distortion, effect_pos)
 		print(AudioServer.get_bus_effect_count(bus))
 		
@@ -67,13 +68,21 @@ class SoundEffectMaster:
 		
 	func adjust_reverb(mag):
 		reverb.set_damping(mag)
+		
 	func adjust_distortion(mag):
 		distortion.set_drive(mag)
+		
 	func adjust_LPF(mag):
 		lpf.set_resonance(mag)
+		
 	func adjust_panner(mag):
 		var pan = 2 * mag - 1
 		panner.set_pan(pan)
+		
+	func adjust_delay(mag):
+		var ms = mag * 300
+		delay.set_tap1_delay_ms(ms)
+		delay.set_tap2_delay_ms(2 * ms)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

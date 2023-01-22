@@ -16,13 +16,17 @@ func _on_Delay_input_event(viewport, event, shape_idx):
 		IsPressed = not IsPressed
 		if IsPressed:
 			#Update sprite here
-			manager_obj.apply_distortion()
+			manager_obj.apply_delay()
 			get_node("Sprite").texture = down_sprite
 			
-			print("Distortion Enabled")
+			print("Delay Enabled")
 		else:
 			#Update sprite here
-			manager_obj.remove_distortion()
+			manager_obj.remove_delay()
 			get_node("Sprite").texture = up_sprite
-			print("Distortion Disabled")
+			print("Delay Disabled")
 
+
+
+func _on_DelayKnob_amplitude(magnitude):
+	manager_obj.adjust_delay(magnitude)

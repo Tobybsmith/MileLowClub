@@ -271,7 +271,7 @@ position = Vector2( 64, 128 )
 shape = SubResource( 2 )
 
 [node name="LPFKnob" type="Area2D" parent="SpriteManager"]
-position = Vector2( 426, -90 )
+position = Vector2( 339, -88 )
 z_index = 1
 script = ExtResource( 30 )
 __meta__ = {
@@ -289,7 +289,7 @@ position = Vector2( 64, 128 )
 shape = SubResource( 2 )
 
 [node name="DistortionKnob" type="Area2D" parent="SpriteManager"]
-position = Vector2( 357, -87 )
+position = Vector2( 408, -88 )
 z_index = 1
 script = ExtResource( 31 )
 __meta__ = {
@@ -597,10 +597,16 @@ max_value = 24.0
 [connection signal="input_event" from="SpriteManager/Music_Scroller" to="SpriteManager/Music_Scroller" method="_on_Music_Scroller_input_event"]
 [connection signal="input_event" from="SpriteManager/Panning" to="SpriteManager/Panning" method="_on_Panning_input_event"]
 [connection signal="input_event" from="SpriteManager/LPF" to="SpriteManager/LPF" method="_on_LPF_input_event"]
+[connection signal="amplitude" from="SpriteManager/ReverbKnob" to="SpriteManager/Reverb" method="_on_ReverbKnob_amplitude"]
 [connection signal="input_event" from="SpriteManager/ReverbKnob" to="SpriteManager/ReverbKnob" method="_on_ReverbKnob_input_event"]
+[connection signal="amplitude" from="SpriteManager/PanningKnob" to="SpriteManager/Panning" method="_on_PanningKnob_amplitude"]
 [connection signal="input_event" from="SpriteManager/PanningKnob" to="SpriteManager/PanningKnob" method="_on_PanningKnob_input_event"]
+[connection signal="amplitude" from="SpriteManager/LPFKnob" to="SpriteManager/LPF" method="_on_LPFKnob_amplitude"]
 [connection signal="input_event" from="SpriteManager/LPFKnob" to="SpriteManager/LPFKnob" method="_on_LPFKnob_input_event"]
+[connection signal="amplitude" from="SpriteManager/DistortionKnob" to="SpriteManager/Distortion" method="_on_DistortionKnob_amplitude"]
+[connection signal="area_exited" from="SpriteManager/DistortionKnob" to="SpriteManager/Distortion" method="_on_DistortionKnob_area_exited"]
 [connection signal="input_event" from="SpriteManager/DistortionKnob" to="SpriteManager/DistortionKnob" method="_on_DistortionKnob_input_event"]
+[connection signal="amplitude" from="SpriteManager/DelayKnob" to="SpriteManager/Delay" method="_on_DelayKnob_amplitude"]
 [connection signal="input_event" from="SpriteManager/DelayKnob" to="SpriteManager/DelayKnob" method="_on_DelayKnob_input_event"]
 [connection signal="input_event" from="SpriteManager/Slider" to="SpriteManager/Slider" method="_on_Slider_input_event"]
 [connection signal="value_changed" from="UIManager/VolumeSlider" to="UIManager" method="_on_VolumeSlider_value_changed"]
