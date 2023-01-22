@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/kick.mp3-6a9b420d05955b30c63de7c4906a94ae.mp3str"
+
+[deps]
+
+source_file="res://audio/kick.mp3"
+dest_files=[ "res://.import/kick.mp3-6a9b420d05955b30c63de7c4906a94ae.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

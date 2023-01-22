@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://PlayButton.gd" type="Script" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://Delay.gd" type="Script" id=33]
 [ext_resource path="res://Bkg.gd" type="Script" id=34]
 [ext_resource path="res://ClubBkg.gd" type="Script" id=35]
+[ext_resource path="res://SoundManager.gd" type="Script" id=36]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 23.0217
@@ -102,6 +103,7 @@ texture = ExtResource( 17 )
 
 [node name="Timer" type="Timer" parent="SpriteManager/SumbitPath"]
 wait_time = 0.1
+one_shot = true
 
 [node name="ColorLights" type="Area2D" parent="SpriteManager"]
 position = Vector2( 650, 350 )
@@ -123,6 +125,91 @@ texture = ExtResource( 17 )
 
 [node name="Timer" type="Timer" parent="SpriteManager/ColorLights"]
 wait_time = 0.1
+one_shot = true
+
+[node name="SFXHat" type="Area2D" parent="SpriteManager"]
+position = Vector2( 739, -15 )
+z_index = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/SFXHat"]
+position = Vector2( 11, 28 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SpriteManager/SFXHat"]
+position = Vector2( 13, 30.25 )
+scale = Vector2( 0.779661, 0.692858 )
+texture = ExtResource( 17 )
+
+[node name="Timer" type="Timer" parent="SpriteManager/SFXHat"]
+wait_time = 0.1
+one_shot = true
+
+[node name="SFXHorn" type="Area2D" parent="SpriteManager"]
+position = Vector2( 689, 39 )
+z_index = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/SFXHorn"]
+position = Vector2( 11, 28 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SpriteManager/SFXHorn"]
+position = Vector2( 13, 30.25 )
+scale = Vector2( 0.779661, 0.692858 )
+texture = ExtResource( 17 )
+
+[node name="Timer" type="Timer" parent="SpriteManager/SFXHorn"]
+wait_time = 0.1
+one_shot = true
+
+[node name="SFXSnare" type="Area2D" parent="SpriteManager"]
+position = Vector2( 689, -12 )
+z_index = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/SFXSnare"]
+position = Vector2( 11, 28 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SpriteManager/SFXSnare"]
+position = Vector2( 13, 30.25 )
+scale = Vector2( 0.779661, 0.692858 )
+texture = ExtResource( 17 )
+
+[node name="Timer" type="Timer" parent="SpriteManager/SFXSnare"]
+wait_time = 0.1
+one_shot = true
+
+[node name="SFXKick" type="Area2D" parent="SpriteManager"]
+position = Vector2( 738, 37 )
+z_index = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/SFXKick"]
+position = Vector2( 11, 28 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SpriteManager/SFXKick"]
+position = Vector2( 13, 30.25 )
+scale = Vector2( 0.779661, 0.692858 )
+texture = ExtResource( 17 )
+
+[node name="Timer" type="Timer" parent="SpriteManager/SFXKick"]
+wait_time = 0.1
+one_shot = true
 
 [node name="Reverb" type="Area2D" parent="SpriteManager"]
 position = Vector2( 292, 362 )
@@ -562,6 +649,7 @@ __meta__ = {
 }
 
 [node name="SoundManager" type="Node2D" parent="."]
+script = ExtResource( 36 )
 
 [node name="AudioVisualizer" type="Node2D" parent="SoundManager"]
 position = Vector2( 527, 480 )
@@ -570,6 +658,8 @@ shape = "Circular"
 radius = 20
 editor_color = Color( 1, 0.647059, 0.235294, 1 )
 visualizer_color = Color( 1, 0.647059, 0.235294, 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundManager"]
 
 [node name="UIManager" type="Node2D" parent="."]
 script = ExtResource( 27 )
@@ -631,6 +721,14 @@ max_value = 24.0
 [connection signal="timeout" from="SpriteManager/SumbitPath/Timer" to="SpriteManager/SumbitPath" method="_on_Timer_timeout"]
 [connection signal="input_event" from="SpriteManager/ColorLights" to="SpriteManager/Misc" method="_on_ColorLights_input_event"]
 [connection signal="timeout" from="SpriteManager/ColorLights/Timer" to="SpriteManager/Misc" method="_on_Timer_timeout"]
+[connection signal="input_event" from="SpriteManager/SFXHat" to="SoundManager" method="_on_SFXHat_input_event"]
+[connection signal="timeout" from="SpriteManager/SFXHat/Timer" to="SoundManager" method="_on_Timer_timeout"]
+[connection signal="input_event" from="SpriteManager/SFXHorn" to="SoundManager" method="_on_SFXHorn_input_event"]
+[connection signal="timeout" from="SpriteManager/SFXHorn/Timer" to="SoundManager" method="_on_Timer_timeout"]
+[connection signal="input_event" from="SpriteManager/SFXSnare" to="SoundManager" method="_on_SFXSnare_input_event"]
+[connection signal="timeout" from="SpriteManager/SFXSnare/Timer" to="SoundManager" method="_on_Timer_timeout"]
+[connection signal="input_event" from="SpriteManager/SFXKick" to="SoundManager" method="_on_SFXKick_input_event"]
+[connection signal="timeout" from="SpriteManager/SFXKick/Timer" to="SoundManager" method="_on_Timer_timeout"]
 [connection signal="input_event" from="SpriteManager/Reverb" to="SpriteManager/Reverb" method="_on_Reverb_input_event"]
 [connection signal="input_event" from="SpriteManager/PowerOff" to="SpriteManager/PlayButton" method="_on_PowerOff_input_event"]
 [connection signal="input_event" from="SpriteManager/Distortion" to="SpriteManager/Distortion" method="_on_Distortion_input_event"]
