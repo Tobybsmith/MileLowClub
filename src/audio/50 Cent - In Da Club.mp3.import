@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/50 Cent - In Da Club.mp3-03e387fa4cc6097f8896fefbbca5b068.mp3str"
+
+[deps]
+
+source_file="res://audio/50 Cent - In Da Club.mp3"
+dest_files=[ "res://.import/50 Cent - In Da Club.mp3-03e387fa4cc6097f8896fefbbca5b068.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
