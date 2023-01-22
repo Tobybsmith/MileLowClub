@@ -1,5 +1,5 @@
 extends Area2D
-
+var playable = true
 var down_sprite = load("res://images/button_img_7_p.png")
 var up_sprite = load("res://images/button_img_7_u.png")
 var IsPressed = false
@@ -23,9 +23,26 @@ func _on_PlayButton_input_event(viewport, event, shape_idx):
 			crowd.bumping = true
 			spotlights.bumping = true
 			music.play()
+			if music.get_stream_paused():
+				music.set_stream_paused(false)
+			else:
+				get_node("Sprite").texture = down_sprite
+				music.play()		
 		else:
 			crowd.bumping = false
 			spotlights.bumping = false
 			get_node("Sprite").texture = up_sprite
+			music.set_stream_paused(true)
+
+
+func _on_PowerOff_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		IsPressed = not IsPressed
+		if IsPressed:
 			music.stop()
+			print("Audio Off")
+		else:
+			music.play()
+
+	
 

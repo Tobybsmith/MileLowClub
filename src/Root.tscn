@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=44 format=2]
+=======
+[gd_scene load_steps=43 format=2]
+>>>>>>> Stashed changes
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://PlayButton.gd" type="Script" id=2]
@@ -26,18 +30,22 @@
 [ext_resource path="res://images/spotlight.png" type="Texture" id=24]
 [ext_resource path="res://Misc.gd" type="Script" id=25]
 [ext_resource path="res://addons/aud_vis/visualizer.gd" type="Script" id=26]
-[ext_resource path="res://UIManager.gd" type="Script" id=27]
+[ext_resource path="res://PowerOff.gd" type="Script" id=27]
 [ext_resource path="res://images/handle.png" type="Texture" id=28]
 [ext_resource path="res://PanningKnob.gd" type="Script" id=29]
 [ext_resource path="res://LPFKnob.gd" type="Script" id=30]
 [ext_resource path="res://DistortionKnob.gd" type="Script" id=31]
 [ext_resource path="res://DelayKnob.gd" type="Script" id=32]
 [ext_resource path="res://Delay.gd" type="Script" id=33]
+<<<<<<< Updated upstream
 [ext_resource path="res://Bkg.gd" type="Script" id=34]
 [ext_resource path="res://ClubBkg.gd" type="Script" id=35]
+=======
+[ext_resource path="res://images/poweroff.png" type="Texture" id=34]
+>>>>>>> Stashed changes
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 18.0
+radius = 23.0217
 
 [sub_resource type="CircleShape2D" id=9]
 radius = 16.0312
@@ -141,6 +149,24 @@ shape = SubResource( 1 )
 position = Vector2( 9.49998, 23 )
 scale = Vector2( 0.694915, 0.571428 )
 texture = ExtResource( 7 )
+
+[node name="PowerOff" type="Area2D" parent="SpriteManager"]
+position = Vector2( 179, 382 )
+script = ExtResource( 27 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/PowerOff"]
+position = Vector2( 1, -2 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SpriteManager/PowerOff"]
+position = Vector2( 2, -1 )
+scale = Vector2( 0.105635, 0.101135 )
+texture = ExtResource( 34 )
 
 [node name="Distortion" type="Area2D" parent="SpriteManager"]
 position = Vector2( 582, 352 )
@@ -615,6 +641,7 @@ max_value = 24.0
 [connection signal="input_event" from="SpriteManager/ColorLights" to="SpriteManager/Misc" method="_on_ColorLights_input_event"]
 [connection signal="timeout" from="SpriteManager/ColorLights/Timer" to="SpriteManager/Misc" method="_on_Timer_timeout"]
 [connection signal="input_event" from="SpriteManager/Reverb" to="SpriteManager/Reverb" method="_on_Reverb_input_event"]
+[connection signal="input_event" from="SpriteManager/PowerOff" to="SpriteManager/PlayButton" method="_on_PowerOff_input_event"]
 [connection signal="input_event" from="SpriteManager/Distortion" to="SpriteManager/Distortion" method="_on_Distortion_input_event"]
 [connection signal="input_event" from="SpriteManager/Delay" to="SpriteManager/Delay" method="_on_Delay_input_event"]
 [connection signal="input_event" from="SpriteManager/Bkg" to="SpriteManager/Misc/ClubBkg" method="_on_Bkg_input_event"]

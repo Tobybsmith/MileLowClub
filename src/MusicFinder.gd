@@ -2,15 +2,14 @@ extends Node2D
 
 var music_path = ""
 var music_label
-var playlist = AudioStreamPlayer.new()
-var player = AudioStreamPlayer.new()
+var playlist 
 var audio_loader
 
 func _ready():
 	music_label = get_node("MusicLabel")
-	add_child(player)
-	add_child(playlist)
 	audio_loader = AudioLoader.new()
+	playlist = AudioStreamPlayer.new()
+	add_child(playlist)
 	
 func _on_SumbitPath_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
@@ -66,15 +65,36 @@ func _on_SumbitPath_input_event(viewport, event, shape_idx):
 				button.connect("pressed", self, "_on_track_button_pressed", [file])
 				vbox.add_child(button)
 			music_label.add_child(vbox)
+		
+		music_dir_loaded(track_queue)
 				
+var track_queue = []
+
 func _on_track_button_pressed(file):
 	var full_path = music_path + "/" + file
 	if OS.get_name() == "Windows":
 		full_path = full_path.replace("/", "\\")
 	else:
-		full_path = full_path.replace("\\", "/")	
-	player.stream = audio_loader.loadfile(full_path)
-	player.play()
+		full_path = full_path.replace("\\", "/")
+	track_queue.append(full_path)
+	if track_queue.size() == 1:
+		playlist.stream = audio_loader.loadfile(track_queue[0])
+		playlist.play()
+	
+
+	if (len(track_queue) < 6):
+		get_node("QueueContentsLabel").text += file.get_file() + "\n"
+	else:
+		get_node("QueueContentsLabel").text += ""
+	
+func music_dir_loaded(track_queue):
+	#Kill the old stuff, and add the music queue to this area
+	get_tree().call_group("left-monitor", "queue_free")
+	#Print the queue to the screen
+	get_node("PathLabel").text = "Queue:"
+	
+		
+
 
 
 #"C:\Users\David\Desktop\Proj\MileLowClub\src\audio"
