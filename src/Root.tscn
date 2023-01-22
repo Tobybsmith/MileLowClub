@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://PlayButton.gd" type="Script" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://images/monitor.png" type="Texture" id=23]
 [ext_resource path="res://images/spotlight.png" type="Texture" id=24]
 [ext_resource path="res://Misc.gd" type="Script" id=25]
+[ext_resource path="res://addons/aud_vis/visualizer.gd" type="Script" id=26]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 18.0
@@ -419,6 +420,13 @@ __meta__ = {
 }
 
 [node name="SoundManager" type="Node2D" parent="."]
+
+[node name="AudioVisualizer" type="Node2D" parent="SoundManager"]
+position = Vector2( 477, 519 )
+script = ExtResource( 26 )
+total_w = 100
+total_h = 75
+editor_color = Color( 1, 0.647059, 0.235294, 1 )
 
 [node name="UIManager" type="Node2D" parent="."]
 

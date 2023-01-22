@@ -4,7 +4,7 @@ extends Node2D
 # Gonkee's audio visualiser for Godot 3.2 - full tutorial https://youtu.be/AwgSICbGxJM
 # If you use this, I would prefer if you gave credit to me and my channel
 
-var spectrum
+var spectrum = AudioServer.get_bus_effect_instance(0, 0)
 
 export(String, "Circular", "Linear") var shape = "Linear" setget new_shape
 export var total_w := 400 setget new_width
@@ -46,9 +46,6 @@ func new_width(_new_value):
 func new_height(_new_value):
 	total_h = _new_value
 	refresh()
-
-func _ready():
-	spectrum = AudioServer.get_bus_effect_instance(AudioServer.get_bus_index("Master"), 0)
 
 func _enter_tree():
 	#max_db += get_parent().volume_db
