@@ -24,3 +24,8 @@ func _on_LPF_input_event(viewport, event, shape_idx):
 			manager_obj.remove_LPF()
 			get_node("Sprite").texture = up_sprite
 			print("LPF DISABLED")
+			
+func _on_AmplitudeKnob_amplitude(magnitude):
+	#var gain = 1 + 100 * magnitude 
+	#print(gain)
+	manager_obj.adjust_LPF(magnitude)

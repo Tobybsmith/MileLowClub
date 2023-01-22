@@ -24,3 +24,7 @@ func _on_Panning_input_event(viewport, event, shape_idx):
 			manager_obj.remove_panner()
 			get_node("Sprite").texture = up_sprite
 			print("Panning Disabled")
+
+
+func _on_AmplitudeKnob_amplitude(magnitude):
+	manager_obj.adjust_panner(magnitude)

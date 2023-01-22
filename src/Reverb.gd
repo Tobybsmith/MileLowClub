@@ -26,3 +26,6 @@ func _on_Reverb_input_event(viewport, event, shape_idx):
 			get_node("Sprite").texture = up_sprite
 			manager_obj.remove_reverb()
 			print("Reverb Disabled")
+
+func _on_AmplitudeKnob_amplitude(magnitude):
+	manager_obj.adjust_reverb(magnitude)
