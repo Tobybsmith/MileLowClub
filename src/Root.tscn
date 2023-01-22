@@ -395,12 +395,18 @@ scale = Vector2( 1.02, 1.14468 )
 z_index = -500
 texture = ExtResource( 21 )
 script = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Spotlight1" type="Sprite" parent="SpriteManager/Misc"]
 position = Vector2( 768, 140 )
 rotation = 0.155334
 z_index = -250
 texture = ExtResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Spotlight2" type="Sprite" parent="SpriteManager/Misc"]
 position = Vector2( 131, 133 )
@@ -408,6 +414,9 @@ rotation = -0.621337
 z_index = -250
 texture = ExtResource( 24 )
 flip_h = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="SoundManager" type="Node2D" parent="."]
 
@@ -439,6 +448,22 @@ margin_left = 713.0
 margin_top = 443.0
 margin_right = 945.0
 margin_bottom = 524.0
+
+[node name="QueueLabel" type="Label" parent="UIManager"]
+margin_left = 785.0
+margin_top = 417.0
+margin_right = 874.0
+margin_bottom = 431.0
+custom_colors/font_color = Color( 1, 0.647059, 0.235294, 1 )
+text = "Music Library:"
+
+[node name="MusicTitleLabel" type="Label" parent="UIManager"]
+margin_left = 498.0
+margin_top = 411.0
+margin_right = 615.0
+margin_bottom = 430.0
+custom_colors/font_color = Color( 1, 0.647059, 0.235294, 1 )
+text = "Queue:"
 
 [connection signal="input_event" from="SpriteManager/PlayButton" to="SpriteManager/PlayButton" method="_on_PlayButton_input_event"]
 [connection signal="input_event" from="SpriteManager/SumbitPath" to="SpriteManager/SumbitPath" method="_on_SumbitPath_input_event"]
