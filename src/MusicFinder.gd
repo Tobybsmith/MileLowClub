@@ -44,6 +44,10 @@ func _on_SumbitPath_input_event(viewport, event, shape_idx):
 			
 			var vbox = VBoxContainer.new()
 			for file in valid_files:
+				if file.get_basename() == "kick" or file.get_basename() == "snare":
+					continue
+				if file.get_basename() == "horn" or file.get_basename() == "hat":
+					continue
 				var button = Button.new()
 				button.text = file.get_basename()
 				var style = StyleBoxFlat.new()
