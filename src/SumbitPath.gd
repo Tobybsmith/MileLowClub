@@ -11,10 +11,9 @@ func _ready():
  
 func _on_SumbitPath_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		IsPressed = not IsPressed
-		if IsPressed:
-			#Update sprite here
-			get_node("Sprite").texture = down_sprite
-		else:
-			#Update sprite here
-			get_node("Sprite").texture = up_sprite
+		get_node("Sprite").texture = down_sprite
+		get_node("Timer").start()
+
+
+func _on_Timer_timeout():
+	get_node("Sprite").texture = up_sprite

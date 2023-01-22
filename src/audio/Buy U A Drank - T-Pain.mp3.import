@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Buy U A Drank - T-Pain.mp3-6312024bf65868bb9cedb3decbefd6e5.mp3str"
+
+[deps]
+
+source_file="res://audio/Buy U A Drank - T-Pain.mp3"
+dest_files=[ "res://.import/Buy U A Drank - T-Pain.mp3-6312024bf65868bb9cedb3decbefd6e5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

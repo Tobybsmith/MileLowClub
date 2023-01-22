@@ -8,7 +8,7 @@ var pos
 var norm_pos
 
 var min_pos = 0
-export var max_pos : int = 100
+export var max_pos : int = 150
 export var sensitivity : float = 0.75
 
 func _ready():
@@ -22,7 +22,7 @@ func _on_Slider_input_event(viewport, event, shape_idx):
 
 func _process(delta):
 	#problematic area
-	pos = (get_global_mouse_position().y - start_pos.y) + max_pos
+	pos = (get_global_mouse_position().y - start_pos.y)
 	
 	if pos < min_pos:
 		pos = min_pos
