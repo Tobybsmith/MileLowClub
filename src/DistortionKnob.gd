@@ -10,7 +10,6 @@ var norm_rot
 
 var min_rot = -120
 var max_rot = 120
-signal amplitude(magnitude)
 export var sensitivity : float = 0.45
 
 func _ready():
@@ -18,7 +17,7 @@ func _ready():
 	set_process(false)
 	get_node("Sprite").texture = sprite_img
 
-func _on_ReverbKnob_input_event(viewport, event, shape_idx):
+func _on_DistortionKnob_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
 		start_pos = get_global_mouse_position()
 		start_rot = get_node("Sprite").rotation_degrees
@@ -38,5 +37,4 @@ func _process(delta):
 	get_node("Sprite").rotation_degrees = rot
 	
 	if Input.is_action_just_released("click"):
-		emit_signal("amplitude", norm_rot)
 		set_process(false)

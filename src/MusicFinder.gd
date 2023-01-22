@@ -47,6 +47,22 @@ func _on_SumbitPath_input_event(viewport, event, shape_idx):
 			for file in valid_files:
 				var button = Button.new()
 				button.text = file.get_basename()
+				var style = StyleBoxFlat.new()
+				#style.border_width_bottom = 2
+				#style.border_width_left = 2
+				#style.border_width_right = 2
+				#style.border_width_top = 2
+				
+				style.bg_color = Color(1.0, 1.0, 1.0, 0.0)
+				style.border_color = Color("#ffa53c")
+				button.add_stylebox_override("normal",style)
+				button.add_stylebox_override("hover",style)
+				button.add_stylebox_override("pressed",style)
+				button.add_stylebox_override("focus",style)
+				button.add_color_override("font_color", Color("#ffa53c"))
+				button.add_color_override("font_color_focus", Color("#ffa53c"))
+				button.add_color_override("font_color_hover", Color("#ffa53c"))
+				button.add_color_override("font_color_pressed", Color("#ffa53c"))
 				button.connect("pressed", self, "_on_track_button_pressed", [file])
 				vbox.add_child(button)
 			music_label.add_child(vbox)
