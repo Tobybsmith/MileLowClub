@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://PlayButton.gd" type="Script" id=2]
@@ -14,33 +14,23 @@
 [ext_resource path="res://Distortion.gd" type="Script" id=12]
 [ext_resource path="res://images/button_img_4_u.png" type="Texture" id=13]
 [ext_resource path="res://MusicFinder.gd" type="Script" id=14]
-[ext_resource path="res://images/monitor.jpg" type="Texture" id=15]
+[ext_resource path="res://images/button_img_5_u.png" type="Texture" id=15]
 [ext_resource path="res://SumbitPath.gd" type="Script" id=16]
 [ext_resource path="res://images/Submit_u.jpeg" type="Texture" id=17]
+[ext_resource path="res://Music_Scroller.gd" type="Script" id=18]
+[ext_resource path="res://images/monitor.jpg" type="Texture" id=19]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.3961
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 36, 89 )
+
 [sub_resource type="CircleShape2D" id=2]
-radius = 42.0
+radius = 29.0
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 31, 10 )
-
-[sub_resource type="StyleBoxEmpty" id=9]
-
-[sub_resource type="StyleBoxTexture" id=10]
-
-[sub_resource type="StyleBoxEmpty" id=11]
-
-[sub_resource type="StyleBoxEmpty" id=12]
-
-[sub_resource type="StyleBoxEmpty" id=13]
-
-[sub_resource type="Theme" id=4]
-HBoxContainer/constants/separation = 4
-
-[sub_resource type="StyleBoxEmpty" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=6]
 
@@ -74,12 +64,11 @@ texture = ExtResource( 7 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SpriteManager/PlayButton"]
 
 [node name="SumbitPath" type="Area2D" parent="SpriteManager"]
-position = Vector2( 500, 333 )
+position = Vector2( 356, 489 )
 z_index = 2
 script = ExtResource( 16 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/SumbitPath"]
@@ -129,6 +118,23 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="Music_Scroller" type="Area2D" parent="SpriteManager"]
+position = Vector2( 639, 450 )
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SpriteManager/Music_Scroller"]
+position = Vector2( 3.19175, 56.5 )
+scale = Vector2( 1.89806, 1.30075 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/Music_Scroller"]
+position = Vector2( 2, 52 )
+shape = SubResource( 5 )
+
 [node name="Panning" type="Area2D" parent="SpriteManager"]
 position = Vector2( 362, 366 )
 script = ExtResource( 3 )
@@ -167,16 +173,20 @@ scale = Vector2( 0.561224, 0.56 )
 texture = ExtResource( 10 )
 
 [node name="AmplitudeKnob" type="Area2D" parent="SpriteManager"]
-position = Vector2( 427, 217 )
+position = Vector2( 664, 252 )
 script = ExtResource( 5 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Sprite" type="Sprite" parent="SpriteManager/AmplitudeKnob"]
-texture = ExtResource( 1 )
+position = Vector2( 62.5, 126.859 )
+scale = Vector2( 0.770834, 0.716631 )
+texture = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/AmplitudeKnob"]
+position = Vector2( 64, 128 )
 shape = SubResource( 2 )
 
 [node name="Slider" type="Area2D" parent="SpriteManager"]
@@ -217,13 +227,13 @@ __meta__ = {
 [node name="Mon1" type="Sprite" parent="SpriteManager/Misc"]
 position = Vector2( 705, 518 )
 scale = Vector2( 0.539809, 0.287313 )
-texture = ExtResource( 15 )
+texture = ExtResource( 19 )
 offset = Vector2( 227.627, -118.773 )
 
 [node name="Mon2" type="Sprite" parent="SpriteManager/Misc"]
 position = Vector2( 88, 517 )
 scale = Vector2( 0.539809, 0.287313 )
-texture = ExtResource( 15 )
+texture = ExtResource( 19 )
 offset = Vector2( 227.627, -118.773 )
 
 [node name="SoundManager" type="Node2D" parent="."]
@@ -233,24 +243,11 @@ offset = Vector2( 227.627, -118.773 )
 [node name="MusicFinder" type="Node2D" parent="UIManager"]
 script = ExtResource( 14 )
 
-[node name="Refresh" type="Button" parent="UIManager/MusicFinder"]
-margin_left = 356.0
-margin_top = 509.0
-margin_right = 379.0
-margin_bottom = 533.0
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 10 )
-custom_styles/focus = SubResource( 11 )
-custom_styles/disabled = SubResource( 12 )
-custom_styles/normal = SubResource( 13 )
-
 [node name="MusicPathInput" type="TextEdit" parent="UIManager/MusicFinder"]
 margin_left = 93.0
 margin_top = 442.0
 margin_right = 328.0
 margin_bottom = 529.0
-theme = SubResource( 4 )
-custom_styles/read_only = SubResource( 5 )
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
 custom_styles/completion = SubResource( 8 )
@@ -269,12 +266,12 @@ margin_right = 945.0
 margin_bottom = 524.0
 
 [connection signal="input_event" from="SpriteManager/PlayButton" to="SpriteManager/PlayButton" method="_on_PlayButton_input_event"]
-[connection signal="input_event" from="SpriteManager/SumbitPath" to="UIManager/MusicFinder" method="_on_SumbitPath_input_event"]
 [connection signal="input_event" from="SpriteManager/SumbitPath" to="SpriteManager/SumbitPath" method="_on_SumbitPath_input_event"]
+[connection signal="input_event" from="SpriteManager/SumbitPath" to="UIManager/MusicFinder" method="_on_SumbitPath_input_event"]
 [connection signal="input_event" from="SpriteManager/Reverb" to="SpriteManager/Reverb" method="_on_Reverb_input_event"]
 [connection signal="input_event" from="SpriteManager/Distortion" to="SpriteManager/Distortion" method="_on_Distortion_input_event"]
+[connection signal="input_event" from="SpriteManager/Music_Scroller" to="SpriteManager/Music_Scroller" method="_on_Music_Scroller_input_event"]
 [connection signal="input_event" from="SpriteManager/Panning" to="SpriteManager/Panning" method="_on_Panning_input_event"]
 [connection signal="input_event" from="SpriteManager/LPF" to="SpriteManager/LPF" method="_on_LPF_input_event"]
 [connection signal="input_event" from="SpriteManager/AmplitudeKnob" to="SpriteManager/AmplitudeKnob" method="_on_AmplitudeKnob_input_event"]
 [connection signal="input_event" from="SpriteManager/Slider" to="SpriteManager/Slider" method="_on_Slider_input_event"]
-[connection signal="pressed" from="UIManager/MusicFinder/Refresh" to="UIManager/MusicFinder" method="_on_Refresh_pressed"]

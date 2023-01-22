@@ -1,7 +1,7 @@
 extends Area2D
 
-var down_sprite = load("res://images/button_img_3_p.png")
-var up_sprite = load("res://images/button_img_3_u.png")
+var down_sprite = load("res://images/Submit_p.jpeg")
+var up_sprite = load("res://images/Submit_u.jpeg")
 
 var IsPressed = false
 
@@ -9,12 +9,14 @@ var IsPressed = false
 func _ready():
 		pass # Replace with function body
  
-func _on_LPF_input_event(viewport, event, shape_idx):
+func _on_SumbitPath_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		IsPressed = not IsPressed
 		if IsPressed:
 			#Update sprite here
-			get_node("Low Pass Filter On!").texture = down_sprite
+			get_node("Sprite").texture = down_sprite
+			print("Reverb Enabled")
 		else:
 			#Update sprite here
-			get_node("Low Pass Filter Off!").texture = up_sprite
+			get_node("Sprite").texture = up_sprite
+			print("Reverb Disabled")
