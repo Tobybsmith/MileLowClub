@@ -25,14 +25,17 @@ func _on_PlayButton_input_event(viewport, event, shape_idx):
 			if music.get_stream_paused():
 				music.set_stream_paused(false)
 				get_node("Sprite").texture = down_sprite
+				get_parent().get_parent().get_node("SoundManager/AudioVisualizer").visible = true
 			else:
 				get_node("Sprite").texture = down_sprite
-				music.play()		
+				music.play()
+				get_parent().get_parent().get_node("SoundManager/AudioVisualizer").visible = true		
 		else:
 			music.set_stream_paused(true)
 			crowd.bumping = false
 			spotlights.bumping = false
 			get_node("Sprite").texture = up_sprite
+			get_parent().get_parent().get_node("SoundManager/AudioVisualizer").visible = false
 			
 
 
