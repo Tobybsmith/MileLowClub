@@ -482,8 +482,8 @@ __meta__ = {
 }
 
 [node name="Cover5" type="Sprite" parent="SpriteManager/Misc"]
-position = Vector2( 663.25, 377.25 )
-scale = Vector2( 1.67, 1.19 )
+position = Vector2( 711.25, 377.25 )
+scale = Vector2( 3.59, 1.19 )
 texture = ExtResource( 20 )
 __meta__ = {
 "_edit_lock_": true
