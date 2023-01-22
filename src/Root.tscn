@@ -128,10 +128,11 @@ wait_time = 0.1
 one_shot = true
 
 [node name="SFXHat" type="Area2D" parent="SpriteManager"]
-position = Vector2( 739, -15 )
+position = Vector2( 806, -12 )
 z_index = 2
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/SFXHat"]
@@ -149,10 +150,11 @@ wait_time = 0.1
 one_shot = true
 
 [node name="SFXHorn" type="Area2D" parent="SpriteManager"]
-position = Vector2( 689, 39 )
+position = Vector2( 755, 37 )
 z_index = 2
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/SFXHorn"]
@@ -170,10 +172,11 @@ wait_time = 0.1
 one_shot = true
 
 [node name="SFXSnare" type="Area2D" parent="SpriteManager"]
-position = Vector2( 689, -12 )
+position = Vector2( 755, -12 )
 z_index = 2
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/SFXSnare"]
@@ -191,10 +194,11 @@ wait_time = 0.1
 one_shot = true
 
 [node name="SFXKick" type="Area2D" parent="SpriteManager"]
-position = Vector2( 738, 37 )
+position = Vector2( 805, 37 )
 z_index = 2
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/SFXKick"]
