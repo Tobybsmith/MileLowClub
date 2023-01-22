@@ -19,7 +19,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	rot += speed * dir
-	print(rot)
 	if rot > 20:
 		dir = -1
 	if rot < 0:
