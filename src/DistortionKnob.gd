@@ -17,7 +17,7 @@ func _ready():
 	set_process(false)
 	get_node("Sprite").texture = sprite_img
 
-func _on_ReverbKnob_input_event(viewport, event, shape_idx):
+func _on_DistortionKnob_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
 		start_pos = get_global_mouse_position()
 		start_rot = get_node("Sprite").rotation_degrees
