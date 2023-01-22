@@ -15,7 +15,7 @@ func _on_SumbitPath_input_event(viewport, event, shape_idx):
 		print(music_path)
 		if music_path == "":
 		#null path, bail
-			print("Invalid Directory")
+			music_label.text = "Empty Directory"
 			return
 		else:
 			#Look at this dir for music
