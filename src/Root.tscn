@@ -27,9 +27,10 @@
 [ext_resource path="res://Misc.gd" type="Script" id=25]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 20.3961
+radius = 18.0
 
 [sub_resource type="CircleShape2D" id=9]
+radius = 16.0312
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 36, 89 )
@@ -60,13 +61,13 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/PlayButton"]
-position = Vector2( 11, 20 )
+position = Vector2( 11, 24 )
 z_index = 1
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="SpriteManager/PlayButton"]
-position = Vector2( 13, 30.25 )
-scale = Vector2( 0.779661, 0.692858 )
+position = Vector2( 13, 35 )
+scale = Vector2( 0.779661, 0.828572 )
 texture = ExtResource( 7 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SpriteManager/PlayButton"]
@@ -76,24 +77,28 @@ position = Vector2( 356, 489 )
 z_index = 2
 script = ExtResource( 16 )
 __meta__ = {
-"_edit_group_": true
+"_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/SumbitPath"]
-position = Vector2( 11, 28 )
+position = Vector2( 11, 40 )
 z_index = 1
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="SpriteManager/SumbitPath"]
-position = Vector2( 13, 30.25 )
-scale = Vector2( 0.779661, 0.692858 )
+position = Vector2( 7.99999, 38 )
+scale = Vector2( 0.745762, 0.693876 )
 texture = ExtResource( 17 )
+
+[node name="Timer" type="Timer" parent="SpriteManager/SumbitPath"]
+wait_time = 0.1
 
 [node name="ColorLights" type="Area2D" parent="SpriteManager"]
 position = Vector2( 650, 350 )
 z_index = 2
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/ColorLights"]
@@ -106,6 +111,9 @@ position = Vector2( 13, 30.25 )
 scale = Vector2( 0.779661, 0.692858 )
 texture = ExtResource( 17 )
 
+[node name="Timer" type="Timer" parent="SpriteManager/ColorLights"]
+wait_time = 0.1
+
 [node name="Reverb" type="Area2D" parent="SpriteManager"]
 position = Vector2( 292, 362 )
 script = ExtResource( 11 )
@@ -115,13 +123,13 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/Reverb"]
-position = Vector2( 15, 14 )
+position = Vector2( 10, 16 )
 z_index = 1
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="SpriteManager/Reverb"]
-position = Vector2( 15, 19 )
-scale = Vector2( 0.508474, 0.457143 )
+position = Vector2( 9.49998, 23 )
+scale = Vector2( 0.694915, 0.571428 )
 texture = ExtResource( 7 )
 
 [node name="Distortion" type="Area2D" parent="SpriteManager"]
@@ -133,12 +141,12 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="SpriteManager/Distortion"]
-position = Vector2( 13.6017, 19 )
-scale = Vector2( 0.566737, 0.457143 )
+position = Vector2( 10.5, 27.7571 )
+scale = Vector2( 0.812499, 0.753995 )
 texture = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/Distortion"]
-position = Vector2( 15, 21 )
+position = Vector2( 12, 26 )
 shape = SubResource( 9 )
 __meta__ = {
 "_edit_group_": true
@@ -153,8 +161,8 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="SpriteManager/Music_Scroller"]
-position = Vector2( 3.19175, 56.5 )
-scale = Vector2( 1.89806, 1.30075 )
+position = Vector2( 3.19175, 61.0001 )
+scale = Vector2( 1.89806, 1.36842 )
 texture = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/Music_Scroller"]
@@ -170,14 +178,14 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/Panning"]
-position = Vector2( -20, 5 )
+position = Vector2( -20, 9 )
 scale = Vector2( 1.2, 1.2 )
 z_index = 1
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="SpriteManager/Panning"]
-position = Vector2( -17, 12 )
-scale = Vector2( 0.528481, 0.421717 )
+position = Vector2( -20.5625, 18.5625 )
+scale = Vector2( 0.618671, 0.554293 )
 texture = ExtResource( 9 )
 
 [node name="LPF" type="Area2D" parent="SpriteManager"]
@@ -194,8 +202,8 @@ z_index = 5
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="SpriteManager/LPF"]
-position = Vector2( -10, 13 )
-scale = Vector2( 0.561224, 0.56 )
+position = Vector2( -12.625, 18 )
+scale = Vector2( 0.668367, 0.76 )
 texture = ExtResource( 10 )
 
 [node name="AmplitudeKnob" type="Area2D" parent="SpriteManager"]
@@ -219,7 +227,8 @@ shape = SubResource( 2 )
 position = Vector2( 528, 153 )
 script = ExtResource( 6 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Rail" type="Sprite" parent="SpriteManager/Slider"]
@@ -243,8 +252,8 @@ texture = ExtResource( 1 )
 script = ExtResource( 25 )
 
 [node name="Background" type="Sprite" parent="SpriteManager/Misc"]
-position = Vector2( 516.5, 298.5 )
-scale = Vector2( 0.531771, 0.463281 )
+position = Vector2( 510.5, 305 )
+scale = Vector2( 0.538021, 0.473437 )
 z_index = -100
 texture = ExtResource( 8 )
 __meta__ = {
@@ -252,83 +261,136 @@ __meta__ = {
 }
 
 [node name="Mon1" type="Sprite" parent="SpriteManager/Misc"]
-position = Vector2( 705, 518 )
-scale = Vector2( 0.539809, 0.287313 )
+position = Vector2( 702.296, 528.255 )
+scale = Vector2( 0.545648, 0.323134 )
 texture = ExtResource( 23 )
 offset = Vector2( 227.627, -118.773 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Mon2" type="Sprite" parent="SpriteManager/Misc"]
-position = Vector2( 88, 517 )
-scale = Vector2( 0.539809, 0.287313 )
+position = Vector2( 78.4129, 527.255 )
+scale = Vector2( 0.56051, 0.323134 )
 texture = ExtResource( 23 )
 offset = Vector2( 227.627, -118.773 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Mon3" type="Sprite" parent="SpriteManager/Misc"]
 position = Vector2( 469.056, 514.6 )
 scale = Vector2( 0.261147, 0.295522 )
 texture = ExtResource( 23 )
 offset = Vector2( 227.627, -118.773 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cover0" type="Sprite" parent="SpriteManager/Misc"]
-position = Vector2( 389, 365 )
-scale = Vector2( 0.72, 1.36 )
+position = Vector2( 390.5, 371 )
+scale = Vector2( 1.14, 1.6 )
 texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cover10" type="Sprite" parent="SpriteManager/Misc"]
 position = Vector2( 29.5, 455.5 )
 scale = Vector2( 1.9, 2.02 )
 texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cover1" type="Sprite" parent="SpriteManager/Misc"]
-position = Vector2( 416, 366 )
-scale = Vector2( 0.400002, 0.36 )
+position = Vector2( 446, 353 )
+scale = Vector2( 1.6, 0.4 )
 texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cover3" type="Sprite" parent="SpriteManager/Misc"]
-position = Vector2( 514.5, 371 )
-scale = Vector2( 0.94, 1.36 )
+position = Vector2( 512.5, 371 )
+scale = Vector2( 1.02, 1.36 )
 texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cover2" type="Sprite" parent="SpriteManager/Misc"]
-position = Vector2( 475, 378.5 )
-scale = Vector2( 0.519999, 0.78 )
+position = Vector2( 472, 382 )
+scale = Vector2( 0.639999, 0.92 )
 texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cover7" type="Sprite" parent="SpriteManager/Misc"]
-position = Vector2( 421, 473.75 )
-scale = Vector2( 1.52, 2.17 )
+position = Vector2( 421, 478.25 )
+scale = Vector2( 1.52, 2.35 )
 texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cover8" type="Sprite" parent="SpriteManager/Misc"]
-position = Vector2( 526.5, 567.625 )
-scale = Vector2( 2.62, 1.105 )
+position = Vector2( 526.5, 587.5 )
+scale = Vector2( 2.62, 1.9 )
 texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cover9" type="Sprite" parent="SpriteManager/Misc"]
-position = Vector2( 1022.75, 475.188 )
-scale = Vector2( 2.57, 1.9525 )
+position = Vector2( 1020.5, 514 )
+scale = Vector2( 2.66, 4.24 )
 texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cover4" type="Sprite" parent="SpriteManager/Misc"]
-position = Vector2( 558.5, 376 )
-scale = Vector2( 0.819999, 0.78 )
+position = Vector2( 558.5, 378.5 )
+scale = Vector2( 0.819999, 1.22 )
 texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cover5" type="Sprite" parent="SpriteManager/Misc"]
 position = Vector2( 663.25, 377.25 )
 scale = Vector2( 1.67, 1.19 )
 texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cover6" type="Sprite" parent="SpriteManager/Misc"]
 position = Vector2( 517.125, 38.5 )
 scale = Vector2( 20.395, 1.9 )
 texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cover11" type="Sprite" parent="SpriteManager/Misc"]
+position = Vector2( 600, 346 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ClubBkg" type="Sprite" parent="SpriteManager/Misc"]
-position = Vector2( 516, 295.75 )
-scale = Vector2( 1.6732, 1.56789 )
+position = Vector2( 509.5, 301.25 )
+scale = Vector2( 1.69444, 1.59661 )
 z_index = -1000
 texture = ExtResource( 22 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Crowd" type="Sprite" parent="SpriteManager/Misc"]
 position = Vector2( 514, 184.25 )
@@ -358,10 +420,10 @@ flip_h = true
 script = ExtResource( 14 )
 
 [node name="MusicPathInput" type="TextEdit" parent="UIManager/MusicFinder"]
-margin_left = 90.0
+margin_left = 78.0
 margin_top = 440.0
 margin_right = 325.0
-margin_bottom = 527.0
+margin_bottom = 542.0
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
 custom_styles/completion = SubResource( 8 )
@@ -382,7 +444,9 @@ margin_bottom = 524.0
 [connection signal="input_event" from="SpriteManager/PlayButton" to="SpriteManager/PlayButton" method="_on_PlayButton_input_event"]
 [connection signal="input_event" from="SpriteManager/SumbitPath" to="SpriteManager/SumbitPath" method="_on_SumbitPath_input_event"]
 [connection signal="input_event" from="SpriteManager/SumbitPath" to="UIManager/MusicFinder" method="_on_SumbitPath_input_event"]
+[connection signal="timeout" from="SpriteManager/SumbitPath/Timer" to="SpriteManager/SumbitPath" method="_on_Timer_timeout"]
 [connection signal="input_event" from="SpriteManager/ColorLights" to="SpriteManager/Misc" method="_on_ColorLights_input_event"]
+[connection signal="timeout" from="SpriteManager/ColorLights/Timer" to="SpriteManager/Misc" method="_on_Timer_timeout"]
 [connection signal="input_event" from="SpriteManager/Reverb" to="SpriteManager/Reverb" method="_on_Reverb_input_event"]
 [connection signal="input_event" from="SpriteManager/Distortion" to="SpriteManager/Distortion" method="_on_Distortion_input_event"]
 [connection signal="input_event" from="SpriteManager/Music_Scroller" to="SpriteManager/Music_Scroller" method="_on_Music_Scroller_input_event"]
