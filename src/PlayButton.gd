@@ -8,7 +8,7 @@ var music:AudioStreamPlayer
 func _ready():
 	music = AudioStreamPlayer.new()
 	add_child(music)
-	music.stream = load("res://audio/Y2Mate.is - Love-I6b6RpNHXpw-1080p-1658034113454.mp3")
+	music.stream = load("res://audio/Love.mp3")
 	get_node("Sprite").texture = up_sprite
 
 func _on_PlayButton_input_event(viewport, event, shape_idx):
