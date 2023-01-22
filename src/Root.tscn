@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://PlayButton.gd" type="Script" id=2]
@@ -25,6 +25,8 @@
 [ext_resource path="res://images/monitor.png" type="Texture" id=23]
 [ext_resource path="res://images/spotlight.png" type="Texture" id=24]
 [ext_resource path="res://Misc.gd" type="Script" id=25]
+[ext_resource path="res://addons/aud_vis/visualizer.gd" type="Script" id=26]
+[ext_resource path="res://UIManager.gd" type="Script" id=27]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 18.0
@@ -420,12 +422,21 @@ __meta__ = {
 
 [node name="SoundManager" type="Node2D" parent="."]
 
+[node name="AudioVisualizer" type="Node2D" parent="SoundManager"]
+position = Vector2( 527, 480 )
+script = ExtResource( 26 )
+shape = "Circular"
+radius = 20
+editor_color = Color( 1, 0.647059, 0.235294, 1 )
+visualizer_color = Color( 1, 0.647059, 0.235294, 1 )
+
 [node name="UIManager" type="Node2D" parent="."]
+script = ExtResource( 27 )
 
 [node name="MusicFinder" type="Node2D" parent="UIManager"]
 script = ExtResource( 14 )
 
-[node name="MusicPathInput" type="TextEdit" parent="UIManager/MusicFinder"]
+[node name="MusicPathInput" type="TextEdit" parent="UIManager/MusicFinder" groups=["left-monitor"]]
 margin_left = 78.0
 margin_top = 440.0
 margin_right = 325.0
@@ -448,6 +459,12 @@ margin_left = 713.0
 margin_top = 443.0
 margin_right = 945.0
 margin_bottom = 524.0
+
+[node name="QueueContentsLabel" type="Label" parent="UIManager/MusicFinder"]
+margin_left = 88.0
+margin_top = 445.0
+margin_right = 320.0
+margin_bottom = 526.0
 
 [node name="QueueLabel" type="Label" parent="UIManager"]
 margin_left = 785.0
