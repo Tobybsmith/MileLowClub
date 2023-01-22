@@ -484,8 +484,7 @@ margin_bottom = 594.0
 custom_icons/grabber_disabled = ExtResource( 28 )
 custom_icons/grabber_highlight = ExtResource( 28 )
 custom_icons/grabber = ExtResource( 28 )
-max_value = 50.0
-value = 30.0
+max_value = 24.0
 
 [connection signal="input_event" from="SpriteManager/PlayButton" to="SpriteManager/PlayButton" method="_on_PlayButton_input_event"]
 [connection signal="input_event" from="SpriteManager/SumbitPath" to="SpriteManager/SumbitPath" method="_on_SumbitPath_input_event"]
