@@ -15,8 +15,6 @@ func _on_SumbitPath_input_event(viewport, event, shape_idx):
 		if IsPressed:
 			#Update sprite here
 			get_node("Sprite").texture = down_sprite
-			print("Reverb Enabled")
 		else:
 			#Update sprite here
 			get_node("Sprite").texture = up_sprite
-			print("Reverb Disabled")

@@ -8,11 +8,14 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_SumbitPath_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		music_label.text = ""
 		music_path = get_node("MusicPathInput").text
 		music_path += "/"
 		print(music_path)
 		if music_path == "":
 		#null path, bail
+			print("Invalid Directory")
 			return
 		else:
 			#Look at this dir for music

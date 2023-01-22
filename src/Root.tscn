@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://PlayButton.gd" type="Script" id=2]
@@ -19,9 +19,12 @@
 [ext_resource path="res://images/Submit_u.jpeg" type="Texture" id=17]
 [ext_resource path="res://Music_Scroller.gd" type="Script" id=18]
 [ext_resource path="res://images/monitor.jpg" type="Texture" id=19]
+[ext_resource path="res://images/Coverup.jpeg" type="Texture" id=20]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.3961
+
+[sub_resource type="CircleShape2D" id=9]
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 36, 89 )
@@ -108,12 +111,13 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="SpriteManager/Distortion"]
-position = Vector2( 15, 19 )
-scale = Vector2( 0.508474, 0.457143 )
+position = Vector2( 13.6017, 19 )
+scale = Vector2( 0.566737, 0.457143 )
 texture = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteManager/Distortion"]
 position = Vector2( 15, 21 )
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -173,7 +177,7 @@ scale = Vector2( 0.561224, 0.56 )
 texture = ExtResource( 10 )
 
 [node name="AmplitudeKnob" type="Area2D" parent="SpriteManager"]
-position = Vector2( 664, 252 )
+position = Vector2( 661, 253 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true,
@@ -236,6 +240,67 @@ scale = Vector2( 0.539809, 0.287313 )
 texture = ExtResource( 19 )
 offset = Vector2( 227.627, -118.773 )
 
+[node name="Mon3" type="Sprite" parent="SpriteManager/Misc"]
+position = Vector2( 469.056, 514.6 )
+scale = Vector2( 0.261147, 0.295522 )
+texture = ExtResource( 19 )
+offset = Vector2( 227.627, -118.773 )
+
+[node name="Cover0" type="Sprite" parent="SpriteManager/Misc"]
+position = Vector2( 389, 365 )
+scale = Vector2( 0.72, 1.36 )
+texture = ExtResource( 20 )
+
+[node name="Cover10" type="Sprite" parent="SpriteManager/Misc"]
+position = Vector2( 29.5, 455.5 )
+scale = Vector2( 1.9, 2.02 )
+texture = ExtResource( 20 )
+
+[node name="Cover1" type="Sprite" parent="SpriteManager/Misc"]
+position = Vector2( 416, 366 )
+scale = Vector2( 0.400002, 0.36 )
+texture = ExtResource( 20 )
+
+[node name="Cover3" type="Sprite" parent="SpriteManager/Misc"]
+position = Vector2( 514.5, 371 )
+scale = Vector2( 0.94, 1.36 )
+texture = ExtResource( 20 )
+
+[node name="Cover2" type="Sprite" parent="SpriteManager/Misc"]
+position = Vector2( 475, 378.5 )
+scale = Vector2( 0.519999, 0.78 )
+texture = ExtResource( 20 )
+
+[node name="Cover7" type="Sprite" parent="SpriteManager/Misc"]
+position = Vector2( 421, 473.75 )
+scale = Vector2( 1.52, 2.17 )
+texture = ExtResource( 20 )
+
+[node name="Cover8" type="Sprite" parent="SpriteManager/Misc"]
+position = Vector2( 526.5, 567.625 )
+scale = Vector2( 2.62, 1.105 )
+texture = ExtResource( 20 )
+
+[node name="Cover9" type="Sprite" parent="SpriteManager/Misc"]
+position = Vector2( 1022.75, 475.188 )
+scale = Vector2( 2.57, 1.9525 )
+texture = ExtResource( 20 )
+
+[node name="Cover4" type="Sprite" parent="SpriteManager/Misc"]
+position = Vector2( 558.5, 376 )
+scale = Vector2( 0.819999, 0.78 )
+texture = ExtResource( 20 )
+
+[node name="Cover5" type="Sprite" parent="SpriteManager/Misc"]
+position = Vector2( 663.25, 377.25 )
+scale = Vector2( 1.67, 1.19 )
+texture = ExtResource( 20 )
+
+[node name="Cover6" type="Sprite" parent="SpriteManager/Misc"]
+position = Vector2( 517.125, 38.5 )
+scale = Vector2( 20.395, 1.9 )
+texture = ExtResource( 20 )
+
 [node name="SoundManager" type="Node2D" parent="."]
 
 [node name="UIManager" type="Node2D" parent="."]
@@ -244,10 +309,10 @@ offset = Vector2( 227.627, -118.773 )
 script = ExtResource( 14 )
 
 [node name="MusicPathInput" type="TextEdit" parent="UIManager/MusicFinder"]
-margin_left = 93.0
-margin_top = 442.0
-margin_right = 328.0
-margin_bottom = 529.0
+margin_left = 90.0
+margin_top = 440.0
+margin_right = 325.0
+margin_bottom = 527.0
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
 custom_styles/completion = SubResource( 8 )
