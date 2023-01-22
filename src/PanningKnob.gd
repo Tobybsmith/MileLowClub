@@ -7,6 +7,7 @@ var sprite_img = load("res://images/button_img_3_circle_u.png")
 
 var rot
 var norm_rot
+signal amplitude(magnitude)
 
 var min_rot = -120
 var max_rot = 120
@@ -37,4 +38,5 @@ func _process(delta):
 	get_node("Sprite").rotation_degrees = rot
 	
 	if Input.is_action_just_released("click"):
+		emit_signal("amplitude", norm_rot)
 		set_process(false)

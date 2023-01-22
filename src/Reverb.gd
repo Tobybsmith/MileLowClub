@@ -27,5 +27,5 @@ func _on_Reverb_input_event(viewport, event, shape_idx):
 			manager_obj.remove_reverb()
 			print("Reverb Disabled")
 
-func _on_AmplitudeKnob_amplitude(magnitude):
+func _on_ReverbKnob_amplitude(magnitude):
 	manager_obj.adjust_reverb(magnitude)

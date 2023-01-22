@@ -26,5 +26,5 @@ func _on_Distortion_input_event(viewport, event, shape_idx):
 			get_node("Sprite").texture = up_sprite
 			print("Distortion Disabled")
 
-func _on_AmplitudeKnob_amplitude(magnitude):
+func _on_DistortionKnob_area_exited(magnitude):
 	manager_obj.adjust_distortion(magnitude)
