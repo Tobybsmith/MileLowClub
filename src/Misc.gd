@@ -7,6 +7,8 @@ var dir = 1
 var rot = 0
 var speed = 0.5
 
+var bumping = false
+
 var down = load("res://images/Submit_p.jpeg")
 var up = load("res://images/Submit_u.jpeg")
 
@@ -23,14 +25,14 @@ func _process(delta):
 		dir = -1
 	if rot < 0:
 		dir = 1
-	get_node("Spotlight1").rotation_degrees = rot / 1.1
-	get_node("Spotlight2").rotation_degrees = rot / 0.9
-	pass
+	if bumping:
+		get_node("Spotlight1").rotation_degrees = rot / 1.1
+		get_node("Spotlight2").rotation_degrees = rot / 0.9
 
 
 func _on_ColorLights_input_event(viewport, event, shape_idx):
 	#select a random color
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and bumping:
 		get_parent().get_node("ColorLights/Sprite").texture = down
 		get_parent().get_node("ColorLights/Timer").start()
 		get_node("Spotlight1").modulate = Color(rng.randf_range(0.5,1.0), rng.randf_range(0.5,1.0), rng.randf_range(0.5,1.0))

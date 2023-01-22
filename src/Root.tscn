@@ -474,14 +474,6 @@ margin_bottom = 431.0
 custom_colors/font_color = Color( 1, 0.647059, 0.235294, 1 )
 text = "Music Library:"
 
-[node name="MusicTitleLabel" type="Label" parent="UIManager"]
-margin_left = 498.0
-margin_top = 411.0
-margin_right = 615.0
-margin_bottom = 430.0
-custom_colors/font_color = Color( 1, 0.647059, 0.235294, 1 )
-text = "Queue:"
-
 [connection signal="input_event" from="SpriteManager/PlayButton" to="SpriteManager/PlayButton" method="_on_PlayButton_input_event"]
 [connection signal="input_event" from="SpriteManager/SumbitPath" to="SpriteManager/SumbitPath" method="_on_SumbitPath_input_event"]
 [connection signal="input_event" from="SpriteManager/SumbitPath" to="UIManager/MusicFinder" method="_on_SumbitPath_input_event"]
