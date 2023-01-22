@@ -10,8 +10,7 @@ var IsPressed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-		manager_obj = sound_manager.SoundEffectMaster.new()
-		pass # Replace with function body
+	manager_obj = sound_manager.SoundEffectMaster.new()
 
  
 func _on_Reverb_input_event(viewport, event, shape_idx):

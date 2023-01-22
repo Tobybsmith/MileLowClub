@@ -23,3 +23,4 @@ func _on_LPF_input_event(viewport, event, shape_idx):
 			#Update sprite here
 			manager_obj.remove_LPF()
 			get_node("Sprite").texture = up_sprite
+			print("LPF DISABLED")
