@@ -4,11 +4,13 @@ var music_path = ""
 var music_label
 var playlist = AudioStreamPlayer.new()
 var player = AudioStreamPlayer.new()
+var audio_loader
 
 func _ready():
 	music_label = get_node("MusicLabel")
 	add_child(player)
 	add_child(playlist)
+	audio_loader = AudioLoader.new()
 	
 func _on_SumbitPath_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
@@ -55,7 +57,7 @@ func _on_track_button_pressed(file):
 		full_path = full_path.replace("/", "\\")
 	else:
 		full_path = full_path.replace("\\", "/")	
-	player.stream = ResourceLoader.load(full_path)
+	player.stream = audio_loader.loadfile(full_path)
 	player.play()
 
 

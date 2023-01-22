@@ -4,11 +4,13 @@ var down_sprite = load("res://images/button_img_7_p.png")
 var up_sprite = load("res://images/button_img_7_u.png")
 var IsPressed = false
 var music:AudioStreamPlayer
+var audio_loader
 
 func _ready():
 	music = AudioStreamPlayer.new()
 	add_child(music)
-	music.stream = load("res://audio/Love.mp3")
+	audio_loader = AudioLoader.new()
+	music.stream = audio_loader.loadfile("res://audio/Love.mp3")
 	get_node("Sprite").texture = up_sprite
 
 func _on_PlayButton_input_event(viewport, event, shape_idx):
