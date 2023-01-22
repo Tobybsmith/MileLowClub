@@ -22,17 +22,18 @@ func _on_PlayButton_input_event(viewport, event, shape_idx):
 			get_node("Sprite").texture = down_sprite
 			crowd.bumping = true
 			spotlights.bumping = true
-			music.play()
 			if music.get_stream_paused():
 				music.set_stream_paused(false)
+				get_node("Sprite").texture = down_sprite
 			else:
 				get_node("Sprite").texture = down_sprite
 				music.play()		
 		else:
+			music.set_stream_paused(true)
 			crowd.bumping = false
 			spotlights.bumping = false
 			get_node("Sprite").texture = up_sprite
-			music.set_stream_paused(true)
+			
 
 
 func _on_PowerOff_input_event(viewport, event, shape_idx):

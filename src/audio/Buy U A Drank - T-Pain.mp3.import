@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Buy U A Drank - T-Pain.mp3-6312024bf65868bb9cedb3dec
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
